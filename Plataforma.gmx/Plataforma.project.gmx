@@ -12,14 +12,21 @@
     <sprite>sprites\sprPlataforma</sprite>
     <sprite>sprites\sprPlataformaMovible</sprite>
     <sprite>sprites\sprEnemigo</sprite>
+    <sprite>sprites\sprEnemigoL</sprite>
     <sprite>sprites\sprPoder</sprite>
     <sprite>sprites\sprCheckPoint</sprite>
     <sprite>sprites\sprLlave</sprite>
     <sprite>sprites\sprPuerta</sprite>
+    <sprite>sprites\sprPowerUp</sprite>
+    <sprite>sprites\sprBottom</sprite>
+    <sprite>sprites\sprVida</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\Bosque</background>
     <background>background\Bosque2</background>
+    <background>background\backGameOver</background>
+    <background>background\backFinal</background>
+    <background>background\backInicio</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -30,16 +37,25 @@
     <object>objects\objMuro</object>
     <object>objects\objPoder</object>
     <object>objects\objEnemigo</object>
+    <object>objects\objEnemigoVolador</object>
     <object>objects\objEnemigoNoCae</object>
     <object>objects\objCheckPoint</object>
     <object>objects\objPlataforma</object>
     <object>objects\objPlataformaMovible</object>
     <object>objects\objLlave</object>
     <object>objects\objPuerta</object>
+    <object>objects\objPowerUp</object>
+    <object>objects\objInicio</object>
+    <object>objects\objGameOver</object>
+    <object>objects\objFinal</object>
+    <object>objects\objVida</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Inicializar</room>
+    <room>rooms\Inicio</room>
     <room>rooms\Nivel1</room>
+    <room>rooms\Final</room>
+    <room>rooms\GameOver</room>
     <room>rooms\Nivel2</room>
   </rooms>
   <help>

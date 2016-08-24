@@ -29,7 +29,6 @@
 
 dir = -1;
 movespeed = 3;
-grav = 0.2;
 hsp = 0;
 vsp = 0;
 fearofheights = 0;
@@ -56,7 +55,6 @@ fearofheights = 0;
           <argument>
             <kind>1</kind>
             <string>hsp = dir * movespeed;
-vsp += grav;
 
 // Colision Horizontal
 if (place_meeting(x+hsp, y, objMuro)){
@@ -84,15 +82,11 @@ y += vsp;
 // Colision del Enemigo
 if (place_meeting(x, y, objJugador))
 {
-    if (objJugador.y &lt; y-16)
-    {
-        with(objJugador) vsp = -jumpspeed;
-        instance_destroy();
-    }
-    else
+
     {
         scrMuerte();
     }
+    {room_goto(GameOver);}
 }
 </string>
           </argument>
@@ -118,6 +112,30 @@ if (place_meeting(x, y, objJugador))
 
 if (dir = -1) {sprite_index = sprEnemigoL;}
 if (dir = 1) {sprite_index = sprEnemigo;}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objJugador">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>lives -=1;
+
 </string>
           </argument>
         </arguments>

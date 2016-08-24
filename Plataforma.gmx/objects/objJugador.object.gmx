@@ -32,6 +32,11 @@ hsp = 0;
 hsp_carry = 0;
 vsp = 0;
 movespeed = 4;
+movespeed_power = 8;
+jumps = 0;
+
+jumpsmax = 2;
+
 Llave = false;
 
 jumpspeed_normal = 7;
@@ -108,7 +113,18 @@ if (vsp &lt; 10) {vsp += grav;}
 
 if (place_meeting(x, y+1, objMuro))
 {
-    if (key_space) vsp = -jumpspeed;
+    jumps = jumpsmax;
+}
+
+if (key_space) &amp;&amp; (jumps &gt; 0) 
+{
+   jumps -=1;
+   vsp = -jumpspeed;
+}
+
+if (key_space) &amp;&amp; (place_meeting(x+1, y, objMuro)|| place_meeting(x-1, y, objMuro))
+{
+    vsp = -jumpspeed;
 }
 
 var hsp_final = hsp + hsp_carry;
@@ -217,7 +233,7 @@ if(place_meeting(x, y, objLlave))
             <string>if(room_exists(room_next(room)))
     {room_goto_next();}
     else
-    {room_goto(Fin);}
+    {room_goto(Final);}
 </string>
           </argument>
         </arguments>
